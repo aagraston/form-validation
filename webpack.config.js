@@ -5,15 +5,15 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'js/[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   devtool: 'eval',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Your Title Here',
-      template: './src/template.html',
+      title: 'Web-Form',
+      template: './src/webform.html',
       filename: './index.html',
       inject: true,
     }),
