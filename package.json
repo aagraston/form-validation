@@ -1,0 +1,37 @@
+{
+  "name": "boiler-plate-2.0",
+  "version": "1.0.0",
+  "description": "A simple boiler plate feat. webpack eslint prettier",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aagraston/boiler-plate-2.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aagraston/boiler-plate-2.0/issues"
+  },
+  "homepage": "https://github.com/aagraston/boiler-plate-2.0#readme",
+  "devDependencies": {
+    "css-loader": "^6.6.0",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.5.1",
+    "sass-loader": "^12.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "sass": "^1.49.7"
+  }
+}
