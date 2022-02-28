@@ -7,3 +7,10 @@ const countryInput = document.querySelector('#input-country')
 const postalInput = document.querySelector('#input-postal-code')
 const passwordInput = document.querySelector('#input-password')
 const confirmPasswordInput = document.querySelector('#input-confirm-password')
+
+// check validity functions
+function checkEmail(e) {
+  emailInput.checkValidity()
+}
+
+emailInput.addEventListener('change', checkEmail)

@@ -1,0 +1,6 @@
+input {
+  &:not(:placeholder-shown):invalid {
+    border: 1px solid $color-red;
+    background-color: $color-pink;
+  }
+}
