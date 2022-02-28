@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+  max-width: 600px;
+
+  row-gap: 10px;
+
+  padding: 20px;
+
+  //form styling
+
+  background-color: $color-white;
+
+  .form-group-div {
+    box-sizing: border-box;
+    flex-basis: 33.33%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    input[type='password'] {
+    }
+  }
+}
