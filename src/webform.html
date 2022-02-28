@@ -14,6 +14,7 @@
               type="email"
               id="input-email"
               placeholder="email@email.com"
+              required
             />
           </div>
         </div>
@@ -21,7 +22,12 @@
         <div class="form-group-div">
           <div class="input-group">
             <label for="input-country">Country:</label>
-            <input type="text" id="input-country" placeholder="Country" />
+            <input
+              type="text"
+              id="input-country"
+              placeholder="Country"
+              required
+            />
           </div>
         </div>
 
@@ -32,6 +38,8 @@
               type="text"
               id="input-postal-code"
               placeholder="Postal Code"
+              required
+              maxlength="6"
             />
           </div>
         </div>
@@ -39,7 +47,13 @@
         <div class="form-group-div">
           <div class="input-group">
             <label for="input-password">Password:</label>
-            <input type="password" id="input-password" placeholder="Password" />
+            <input
+              type="password"
+              id="input-password"
+              placeholder="Password"
+              required
+              pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+            />
           </div>
 
           <div class="input-group">
@@ -48,6 +62,7 @@
               type="password"
               id="input-confirm-password"
               placeholder="Confirm Password"
+              required
             />
           </div>
         </div>
