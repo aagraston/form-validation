@@ -1,6 +1,6 @@
 // an object for checking whether a country exists
 
-const Countries = () => {
+const countries = () => {
   const countriesArray = [
     'Afghanistan',
     'Albania',
@@ -261,6 +261,8 @@ const Countries = () => {
     }
     return retBool
   }
+
+  return { isCountry }
 }
 
-export default Countries
+export default countries

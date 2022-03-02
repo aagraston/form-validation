@@ -1,5 +1,5 @@
 import './scss/app.scss'
-import Countries from './countries'
+import ValidityChecker from './validityChecker'
 
 // select input elements
 const emailInput = document.querySelector('#input-email')
@@ -8,9 +8,32 @@ const postalInput = document.querySelector('#input-postal-code')
 const passwordInput = document.querySelector('#input-password')
 const confirmPasswordInput = document.querySelector('#input-confirm-password')
 
-// check validity functions
-function checkEmail(e) {
-  emailInput.checkValidity()
+emailInput.addEventListener('input', disableValidityCheck)
+countryInput.addEventListener('input', disableValidityCheck)
+postalInput.addEventListener('input', disableValidityCheck)
+passwordInput.addEventListener('input', disableValidityCheck)
+confirmPasswordInput.addEventListener('input', disableValidityCheck)
+
+countryInput.addEventListener('change', checkCountry)
+
+// setup validity checker
+
+const validityChecker = ValidityChecker()
+
+console.log(validityChecker)
+
+function checkCountry(e) {
+  const t = e.target
+  if (validityChecker.checkCountry(t)) {
+    t.setCustomValidity('')
+  } else {
+    t.setCustomValidity('This must be a real country')
+  }
+  t.reportValidity()
 }
 
-emailInput.addEventListener('change', checkEmail)
+function disableValidityCheck(e) {
+  const t = e.target
+  t.setCustomValidity('')
+  t.reportValidity()
+}

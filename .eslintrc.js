@@ -9,5 +9,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  rules: { 'prettier/prettier': 0, 'no-unused-vars': 'off' },
+  rules: {
+    'prettier/prettier': 0,
+    'no-unused-vars': 'off',
+    'no-use-before-define': 'off',
+  },
 }
