@@ -15,6 +15,7 @@ passwordInput.addEventListener('input', disableValidityCheck)
 confirmPasswordInput.addEventListener('input', disableValidityCheck)
 
 countryInput.addEventListener('change', checkCountry)
+postalInput.addEventListener('change', checkPostal)
 
 // setup validity checker
 
@@ -30,6 +31,11 @@ function checkCountry(e) {
     t.setCustomValidity('This must be a real country')
   }
   t.reportValidity()
+}
+
+function checkPostal(e) {
+  const t = e.target
+  validityChecker.checkPostal(t)
 }
 
 function disableValidityCheck(e) {

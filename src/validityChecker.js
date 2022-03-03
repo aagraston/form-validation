@@ -19,7 +19,28 @@ const validityChecker = () => {
     return retBool
   }
 
-  return { checkEmail, checkCountry }
+  const checkPostal = (element) => {
+    let retBool = false
+    if (element.value.includes('-')) {
+      if (element.checkValidity()) {
+        retBool = true
+      }
+    } else if (element.value.length === 6) {
+      const charArrayP1 = element.value.slice(0, 3)
+      const charArrayP2 = element.value.slice(3, 6)
+      const newString = `${charArrayP1}-${charArrayP2}`
+
+      element.value = newString
+
+      retBool = true
+    } else {
+      element.setCustomValidity('Please input a properly formatted postal code')
+      element.reportValidity()
+    }
+    return retBool
+  }
+
+  return { checkEmail, checkCountry, checkPostal }
 }
 
 export default validityChecker
