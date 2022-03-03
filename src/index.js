@@ -8,6 +8,7 @@ const postalInput = document.querySelector('#input-postal-code')
 const passwordInput = document.querySelector('#input-password')
 const confirmPasswordInput = document.querySelector('#input-confirm-password')
 const submitInput = document.querySelector('#input-submit')
+const feedbackP = document.querySelector('.feedback-paragraph')
 
 emailInput.addEventListener('input', disableValidityCheck)
 countryInput.addEventListener('input', disableValidityCheck)
@@ -73,6 +74,9 @@ function checkSubmission(e) {
     confirmPasswordInput.checkValidity()
   ) {
     clearInputs()
+    setFeedback('well done! Form filled to perfection')
+  } else {
+    setFeedback('Oops, invalid input(s)')
   }
 }
 
@@ -82,6 +86,10 @@ function clearInputs() {
   postalInput.value = ''
   passwordInput.value = ''
   confirmPasswordInput.value = ''
+}
+
+function setFeedback(s) {
+  feedbackP.innerHTML = s
 }
 
 function disableValidityCheck(e) {
