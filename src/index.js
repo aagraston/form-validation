@@ -7,6 +7,7 @@ const countryInput = document.querySelector('#input-country')
 const postalInput = document.querySelector('#input-postal-code')
 const passwordInput = document.querySelector('#input-password')
 const confirmPasswordInput = document.querySelector('#input-confirm-password')
+const submitInput = document.querySelector('#input-submit')
 
 emailInput.addEventListener('input', disableValidityCheck)
 countryInput.addEventListener('input', disableValidityCheck)
@@ -18,6 +19,8 @@ countryInput.addEventListener('change', checkCountry)
 postalInput.addEventListener('change', checkPostal)
 passwordInput.addEventListener('change', checkPasswordsMatch)
 confirmPasswordInput.addEventListener('change', checkPasswordsMatch)
+
+submitInput.addEventListener('click', checkSubmission)
 
 // setup validity checker
 
@@ -59,6 +62,26 @@ function checkPasswordsMatch(e) {
     retBool = true
   }
   return retBool
+}
+
+function checkSubmission(e) {
+  if (
+    emailInput.checkValidity() &&
+    countryInput.checkValidity() &&
+    postalInput.checkValidity() &&
+    passwordInput.checkValidity() &&
+    confirmPasswordInput.checkValidity()
+  ) {
+    clearInputs()
+  }
+}
+
+function clearInputs() {
+  emailInput.value = ''
+  countryInput.value = ''
+  postalInput.value = ''
+  passwordInput.value = ''
+  confirmPasswordInput.value = ''
 }
 
 function disableValidityCheck(e) {
