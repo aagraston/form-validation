@@ -16,6 +16,8 @@ confirmPasswordInput.addEventListener('input', disableValidityCheck)
 
 countryInput.addEventListener('change', checkCountry)
 postalInput.addEventListener('change', checkPostal)
+passwordInput.addEventListener('change', checkPasswordsMatch)
+confirmPasswordInput.addEventListener('change', checkPasswordsMatch)
 
 // setup validity checker
 
@@ -36,6 +38,27 @@ function checkCountry(e) {
 function checkPostal(e) {
   const t = e.target
   validityChecker.checkPostal(t)
+}
+
+// computing here because access to both passwords inputs
+function checkPasswordsMatch(e) {
+  const t = e.target
+  let retBool = false
+  console.log(`${passwordInput.value} ${confirmPasswordInput.value}`)
+  if (
+    passwordInput.value !== confirmPasswordInput.value &&
+    passwordInput.value != null &&
+    passwordInput.value !== '' &&
+    confirmPasswordInput.value != null &&
+    confirmPasswordInput.value !== ''
+  ) {
+    console.log("shouldn't be here")
+    t.setCustomValidity('Passwords must match')
+    t.reportValidity()
+  } else {
+    retBool = true
+  }
+  return retBool
 }
 
 function disableValidityCheck(e) {
